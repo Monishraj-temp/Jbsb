@@ -1,0 +1,28 @@
+{
+  "name": "jbsb",
+  "version": "1.0.0",
+  "description": "samudaya bhavana website",
+
+  "scripts": {
+  "build:js": "esbuild src/index.js --bundle --outfile=dist/bundle.js",
+  "build:css": "sass src/styles/main.scss dist/styles.css",
+  "build": "npm run build:js && npm run build:css",
+  "watch:css": "sass src/styles/main.scss dist/styles.css --watch"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Monishraj-temp/Jbsb.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Monishraj-temp/Jbsb/issues"
+  },
+  "homepage": "https://github.com/Monishraj-temp/Jbsb#readme",
+  "devDependencies": {
+    "esbuild": "^0.27.1",
+    "sass": "^1.96.0"
+  }
+}
