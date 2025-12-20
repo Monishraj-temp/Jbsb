@@ -1,0 +1,24 @@
+@use "./colors" as colors;
+
+html{
+    box-sizing: border-box;
+}
+*, *::after, *::before{
+    box-sizing: inherit;
+}
+body{
+    width:100%;
+    height:100%;
+    font-size:1rem;
+    background-color:colors.$bg;
+    padding:0;
+    margin:0;
+}
+h1, h2, h3, h4, h5, h6, p{
+    margin:0;
+    padding:0;
+    letter-spacing:.2mm;
+    word-spacing:.3mm;
+}
+
+// scaling up to: 768px

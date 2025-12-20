@@ -1,0 +1,123 @@
+@use "../partials/hub" as hub;
+
+.header{
+    @include hub.height-width($hll:55px, $hul:10dvh);
+    background-color:hub.$prm;
+    padding-inline:1rem;
+    color:hub.$bg;
+    @include hub.flex-box($space:space-between);
+    &__title{
+        text-transform:uppercase;
+        width:25ch;
+        text-align:center;
+        order:1;
+    }
+    &__navbar{
+        height:50%;
+        width:30%;
+        border-radius:.5rem;
+        background-color:color-mix(in srgb, hub.$prm 80%, #f2f2f2 20%);
+        display:none;
+    }
+    &__nav-links{
+        text-decoration:none;
+        text-transform:capitalize;
+        font-weight:700;
+        font-size:1rem;
+        color:hub.$txt;
+    }
+    &__menu-btn{
+        border:0;
+        height:1.2rem;
+        padding-inline:2px;
+        padding-block:0;
+        color:inherit;
+        font-weight:700;
+        font-size:1.2rem;
+        background-color:transparent;
+        order:3
+    }
+    &__faq-btn{
+        border:0;
+        border-radius:.5rem;
+        padding-inline:2px;
+        padding-block:0;
+        font-weight:700;
+        background-color:transparent;
+        color:inherit;
+        text-transform:uppercase;
+        display:none;
+        order:4;
+    }
+}
+
+.sidebar{
+    height:50dvh;
+    width:60dvw;
+    border-radius:.5rem;
+    outline:2px hub.$pop solid;
+    position:fixed;
+    top:0; right:0;
+    background-color:hub.$bg;
+    transform: translateX(100%);
+    transition: transform cubic-bezier(0.68, -0.55, 0.27, 1.55) 500ms;
+    @include hub.flex-box($dir:column);
+    &__close-btn{
+        position:absolute;
+        top:20px; left:20px;
+        height:20px;
+        width:30px;
+        border:0;
+        background-color:transparent;
+        color:hub.$txt;
+        font-size:1.2rem;
+        font-weight:700;
+        padding-inline:2px;
+    }
+    &__nav-links{
+        @extend .header__nav-links;
+    }
+}
+
+.footer{
+    @include hub.height-width($hll:100px, $hul:20dvh);
+    background-color:hub.$prm;
+    color:hub.$txt;
+    @include hub.flex-box($dir:column);
+    &__society{
+        text-transform:capitalize;
+        text-align:center;
+        font-weight:700;
+        color:hub.$bg;
+        width:24ch;
+        @include hub.flex-box($dir:column);
+        & > sub, & > sup{
+            font-size:.8rem;
+            color:hub.$txt;
+        }
+    }
+}
+
+
+
+// scaling up to :768px
+@media (min-width:768px){
+    .header{
+        &__navbar{
+            @include hub.flex-box($space:space-evenly);
+            order: 2;
+        }
+        &__menu-btn{
+            display:none;
+        }
+        &__faq-btn{
+            display:block;
+        }
+    }
+    .sidebar{
+        display:none;
+    }
+    .footer{
+        @include hub.flex-box($dir:row);
+    }
+}

@@ -7,7 +7,7 @@
   "build:js": "esbuild src/index.js --bundle --outfile=dist/bundle.js",
   "build:css": "sass src/styles/main.scss dist/styles.css",
   "build": "npm run build:js && npm run build:css",
-  "watch:css": "sass src/styles/main.scss dist/styles.css --watch"
+  "watch:css": "sass src/scss/main.scss dist/main.css --watch"
   },
 
   "repository": {

@@ -1,0 +1,11 @@
+@mixin flex-box($dir:row, $space:space-evenly){
+    display:flex;
+    flex-direction:$dir;
+    justify-content:$space;
+    align-items:center;
+}
+
+@mixin height-width($hll, $hul, $wll:320px, $wcur:100%, $wul:1536px){
+    height:max($hll, $hul);
+    width:clamp($wll, $wcur, $wul);
+}
